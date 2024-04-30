@@ -1,29 +1,33 @@
 #include "tuple.h"
 
-t_tuple	*tuple_add(t_tuple *t1, t_tuple *t2)
+void	tuple_add(t_tuple *result, t_tuple *t1, t_tuple *t2)
 {
-	return (tuple_create(
-		t1->x + t2->x,
-		t1->y + t2->y,
-		t1->z + t2->z,
-		t1->w + t2->w));
+	result->x = t1->x + t2->x;
+	result->y = t1->y + t2->y;
+	result->z = t1->z + t2->z;
+	result->w = t1->w + t2->w;
 }
 
-t_tuple	*tuple_subtract(t_tuple *t1, t_tuple *t2)
+void	tuple_subtract(t_tuple *result, t_tuple *t1, t_tuple *t2)
 {
-	return (tuple_create(
-		t1->x - t2->x,
-		t1->y - t2->y,
-		t1->z - t2->z,
-		t1->w - t2->w));
+	result->x = t1->x - t2->x;
+	result->y = t1->y - t2->y;
+	result->z = t1->z - t2->z;
+	result->w = t1->w - t2->w;
 }
 
-t_tuple	*tuple_mult(t_tuple *t, double scale)
+void	tuple_mult(t_tuple *result, t_tuple *t, double scale)
 {
-	return (tuple_create(t->x * scale, t->y * scale, t->z * scale, t->w * scale));
+	result->x = t->x * scale;
+	result->y = t->y * scale;
+	result->z = t->z * scale;
+	result->w = t->w * scale;
 }
 
-t_tuple	*tuple_div(t_tuple *t, double scale)
+void	tuple_div(t_tuple *result, t_tuple *t, double scale)
 {
-	return (tuple_create(t->x / scale, t->y / scale, t->z / scale, t->w / scale));
+	result->x = t->x / scale;
+	result->y = t->y / scale;
+	result->z = t->z / scale;
+	result->w = t->w / scale;
 }
