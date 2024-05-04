@@ -39,7 +39,7 @@ Test(PPM, canvas_to_ppm)
 		"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n"
 		"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n";
 	
-	pipe(_pipe);
+	(void)!pipe(_pipe);
 
 	canvas = canvas_create(10, 2);
 	color_set(&color, 1.5, 0, 0);
@@ -50,7 +50,7 @@ Test(PPM, canvas_to_ppm)
 	canvas_write_pixel(canvas, 0, 2, &color);
 
 	ppm_canvas_write(canvas, _pipe[1]);
-	write(_pipe[1], "", 1);
+	(void)!write(_pipe[1], "", 1);
 
 	result = pipe_to_str(_pipe[0], 4096);
 	close(_pipe[0]);

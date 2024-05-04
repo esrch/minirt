@@ -1,8 +1,8 @@
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I./inc -I./lib/libft
-LDFLAGS = -L./lib/libft
-LDLIBS = -lm -lft
+CFLAGS = -Wall -Wextra -Werror -I./inc -I./lib/libft -I/usr/include -Imlx_linux
+LDFLAGS = -L./lib/libft -Lmlx_linux -L/usr/lib
+LDLIBS = -lm -lft -lmlx -lXext -lX11 -lz -O3
 
 SRC_DIR = src
 INC_DIR = inc
